@@ -28,6 +28,7 @@
         .product-detail{
             width: 360px;
             padding-bottom: 2rem;
+            box-sizing: border-box;
             position: absolute;
             right: 0;
         }
@@ -44,16 +45,136 @@
             height: 50px;
         }
 
+        .my-order-content{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title{
+            font-size: var(--lg);
+            font-weight: bold;
+        }
+
+        .title-container{
+            display: flex;
+        }
+
+        .title-container img{
+            transform: rotate(180deg);
+            margin-right: 1rem;
+        }
+
+        .order{
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            background-color: var(--text-input-field);
+            border-radius: .5rem;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+        }
+
+        .order p:nth-child(1){
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order p span:nth-child(1){
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .order p:nth-child(2){
+            text-align: end;
+            font-weight: bold
+        }
+
+        .shopping-cart{
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .shopping-cart figure{
+            margin: 0;
+        }
+
+        .shopping-cart figure img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1.1rem;
+            object-fit: cover;
+        }
+
+        .shopping-cart p:nth-child(2){
+            color: var(--very-light-pink);
+        }
+        .shopping-cart p:nth-child(2){
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .prueba{
+            margin: 24px 0 0;
+        }
+
         @media (max-width: 640px){
             .product-detail{
                 width: 100%;
             }
         }
+
     </style>
 </head>
 <body>
     <aside class="product-detail">
+        <div class="title-container">
+            <img src="./icons/flechita.svg" alt="arrow">
+            <p class="title">Shopping cart</p>
+        </div>
         
+        <div class="my-order-content">
+            
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159472/headphones-instagram-video-games-razer-159472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="headphones">
+                </figure>
+                <p>Razer Headphones</p>
+                <p>$150</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/6335954/pexels-photo-6335954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="helmet">
+                </figure>
+                <p>Mandalorian helmet</p>
+                <p>$200</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/6320591/pexels-photo-6320591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="grogu">
+                </figure>
+                <p>Grogu toy</p>
+                <p>$100</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="order">
+                <p>
+                    <span>Total</span>
+                </p>
+                <p>$450.00</p>
+            </div>
+
+            <button class="primary-button">
+                Checkout
+            </button>
+
+            <div class="prueba">blabla</div>
+
         </div>
     </aside>
 </body>
